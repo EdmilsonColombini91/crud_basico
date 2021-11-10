@@ -14,8 +14,8 @@ class CreateProdutosTable extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome'); // Esse campo espera um texto
+            $table->increments('id');
+            $table->string('nome', 255); // Esse campo espera um texto
             $table->decimal('custo', 19, 2); // Esse campo espera um número do tipo decimal
             $table->decimal('preco', 19, 2); // Esse campo espera um número do tipo decimal
             $table->integer('quantidade'); // Esse campo espera um número do tipo inteiro
