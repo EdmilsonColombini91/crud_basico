@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::get('/produtos/novo', [ProdutosController::class, 'create']);
 Route::post('/produtos/novo', [\App\Http\controllers\ProdutosController::class, 'store'])->name('registrar_produto');
 Route::get('/produto/ver/{id}', [ProdutosController::class, 'show']);
-Route::get('/produtos/editar/{id}', [ProdutosController::class, 'edit']);
+Route::get('/produto/editar/{id}', [ProdutosController::class, 'edit']);
 Route::post('/produtos/editar/{id}', [\App\Http\controllers\ProdutosController::class, 'update'])->name('alterar_produto');
+Route::get('/produto/excluir/{id}', [ProdutosController::class, 'delete']);
+Route::post('/produtos/excluir/{id}', [\App\Http\controllers\ProdutosController::class, 'destroy'])->name('excluir_produto');
+
